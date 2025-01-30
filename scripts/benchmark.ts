@@ -27,6 +27,7 @@ const runScript = async (script: string, label: string) => {
 const main = async () => {
   const scripts = [
     { script: "pnpm run test:karma --watch=false", label: "karma" },
+    { script: "pnpm run test:jest --watch=false", label: "jest" },
   ];
 
   const isParallel = process.argv.includes("--parallel");

@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "bench": "tsx ./scripts/benchmark.ts",
     "bench:parallel": "tsx ./scripts/benchmark.ts --parallel",
-    "test:karma": "ng test"
+    "test:karma": "ng test",
+    "test:jest": "jest"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +22,10 @@
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
     "@testing-library/angular": "^17.3.5",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.12.0",
+    "jest": "^29.7.0",
+    "jest-preset-angular": "^14.5.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "tsx": "^4.19.2",
