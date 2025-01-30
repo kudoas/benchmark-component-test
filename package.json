@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "bench": "tsx ./scripts/benchmark.ts",
+    "bench:parallel": "tsx ./scripts/benchmark.ts --parallel",
+    "test:karma": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -19,8 +21,10 @@
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
     "@testing-library/angular": "^17.3.5",
+    "@types/node": "^22.12.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "tsx": "^4.19.2",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
