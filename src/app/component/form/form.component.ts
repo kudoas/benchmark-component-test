@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 
@@ -9,7 +9,7 @@ import { JsonPipe } from '@angular/common';
     <div class="form-container">
       <h1>ユーザー登録フォーム</h1>
 
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form">
+      <form #f="ngForm" (ngSubmit)="submitData(f)" class="form">
         @if (submitSuccess) {
           <div class="success-message">
             送信成功！
@@ -66,18 +66,18 @@ import { JsonPipe } from '@angular/common';
         </div>
 
         <div>
-          <label class="form-field">性別</label>
-          <select
-            name="gender"
-            [(ngModel)]="formData.gender"
+          <label for="address" class="form-field">住所</label>
+          <input
+            id="address"
+            name="address"
+            [(ngModel)]="formData.address"
             required
+            #address="ngModel"
             class="form-input"
           >
-            <option value="">選択してください</option>
-            <option value="male">男性</option>
-            <option value="female">女性</option>
-            <option value="other">その他</option>
-          </select>
+          @if (address.invalid && (address.dirty || address.touched)) {
+            <small class="error-message">住所は必須です</small>
+          }
         </div>
 
         <button
@@ -99,21 +99,22 @@ import { JsonPipe } from '@angular/common';
   `,
 })
 export class FormComponent {
+  formSubmit = output<any>();
   formData = {
     name: '',
     email: '',
     age: null as number | null,
-    gender: ''
+    address: '',
   };
 
   showData = false;
   submitSuccess = false;
 
-  onSubmit(form: any) {
+  submitData(form: any) {
     if (form.valid) {
       this.showData = true;
       this.submitSuccess = true;
-      console.log('フォームデータ:', this.formData);
     }
+    this.formSubmit.emit(this.formData);
   }
 }
