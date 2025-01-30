@@ -1,15 +1,15 @@
 import { render, fireEvent } from '@testing-library/angular';
 
-import { FormComponent } from '../component/form/form.component';
+import { FormComponent } from '../../component/form/form.component';
 
-const TEST_COUNT = 100
+const TEST_COUNT = 1000
 const array = Array.from({ length: TEST_COUNT }, (_, i) => ({ index: i + 1 }));
 
 describe('FormComponent', () => {
   array.forEach((_, i) => {
     it(`form test part ${i}`, async () => {
       const formSubmit = jasmine.createSpy('formSubmit');
-      const { getByLabelText, getByRole, } = await render(FormComponent, {
+      const { getByLabelText, getByRole } = await render(FormComponent, {
         on: { formSubmit }
       });
 
