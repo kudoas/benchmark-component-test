@@ -94,7 +94,8 @@
             "scripts": [],
             "include": [
               "src/app/test/karma/**/*.ts"
-            ]
+            ],
+            "browsers": "ChromeHeadless"
           }
         }
       }

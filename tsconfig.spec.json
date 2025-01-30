@@ -6,11 +6,12 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine",
-      "jest"
+      "jest",
+      "vitest/globals"
     ]
   },
   "include": [
-    "src/app/test/**/*.spec.ts",
+    "src/app/test/**/*.ts",
     "src/**/*.d.ts"
   ]
 }

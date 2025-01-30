@@ -26,8 +26,9 @@ const runScript = async (script: string, label: string) => {
 
 const main = async () => {
   const scripts = [
-    { script: "pnpm run test:karma --watch=false", label: "karma" },
+    { script: "pnpm run test:karma --watch=false", label: "karma+jasmine" },
     { script: "pnpm run test:jest --watch=false", label: "jest" },
+    { script: "pnpm run test:vitest --watch=false", label: "vitest" },
   ];
 
   const isParallel = process.argv.includes("--parallel");
@@ -41,6 +42,8 @@ const main = async () => {
     const results: { name: string; duration: string }[] = [];
     for (const { script, label } of scripts) {
       const result = await runScript(script, label);
+      // 10 秒待つ
+      await new Promise((resolve) => setTimeout(resolve, 10000));
       results.push(result);
     }
     console.table(results);
