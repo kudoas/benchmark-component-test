@@ -2,24 +2,29 @@ import { render, fireEvent } from '@testing-library/angular';
 
 import { FormComponent } from '../component/form/form.component';
 
+const TEST_COUNT = 100
+const array = Array.from({ length: TEST_COUNT }, (_, i) => ({ index: i + 1 }));
+
 describe('FormComponent', () => {
-  it('should create', async () => {
-    const formSubmit = jasmine.createSpy('formSubmit');
-    const { getByLabelText, getByRole, } = await render(FormComponent, {
-      on: { formSubmit }
+  array.forEach((_, i) => {
+    it(`form test part ${i}`, async () => {
+      const formSubmit = jasmine.createSpy('formSubmit');
+      const { getByLabelText, getByRole, } = await render(FormComponent, {
+        on: { formSubmit }
+      });
+
+      fireEvent.input(getByLabelText('名前'), { target: { value: `test${i}` } });
+      fireEvent.input(getByLabelText('メールアドレス'), { target: { value: `test${i}@test.com` } });
+      fireEvent.input(getByLabelText('年齢'), { target: { value: `${i}` } });
+      fireEvent.input(getByLabelText('住所'), { target: { value: `test address${i}` } });
+      fireEvent.click(getByRole('button'));
+
+      expect(formSubmit).toHaveBeenCalledWith({
+        name: `test${i}`,
+        email: `test${i}@test.com`,
+        age: i,
+        address: `test address${i}`
+      })
     });
-
-    fireEvent.input(getByLabelText('名前'), { target: { value: 'test' } });
-    fireEvent.input(getByLabelText('メールアドレス'), { target: { value: 'test@test.com' } });
-    fireEvent.input(getByLabelText('年齢'), { target: { value: '20' } });
-    fireEvent.input(getByLabelText('住所'), { target: { value: 'test address' } });
-    fireEvent.click(getByRole('button'));
-
-    expect(formSubmit).toHaveBeenCalledWith({
-      name: 'test',
-      email: 'test@test.com',
-      age: 20,
-      address: 'test address',
-    })
   });
 });
