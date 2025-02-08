@@ -6,6 +6,7 @@ const execAsync = promisify(exec);
 
 const runScript = async (script: string, label: string) => {
   const start = performance.now();
+  console.log(`[Start](${label}) ${script}`);
 
   try {
     const { stdout, stderr } = await execAsync(script);
@@ -20,6 +21,7 @@ const runScript = async (script: string, label: string) => {
   }
 
   const end = performance.now();
+  console.log(`[End](${label}) ${script}`);
   const duration = (end - start) / 1000;
   return { name: label, duration: `${duration.toFixed(2)}s` };
 };
@@ -42,8 +44,6 @@ const main = async () => {
     const results: { name: string; duration: string }[] = [];
     for (const { script, label } of scripts) {
       const result = await runScript(script, label);
-      // 10 秒待つ
-      await new Promise((resolve) => setTimeout(resolve, 10000));
       results.push(result);
     }
     console.table(results);
