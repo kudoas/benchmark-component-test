@@ -29,6 +29,7 @@ const runScript = async (script: string, label: string) => {
 const main = async () => {
   const scripts = [
     { script: "pnpm run test:karma --watch=false", label: "karma+jasmine" },
+    { script: "pnpm run test:wtr --watch=false", label: "wtr+jasmine" },
     { script: "pnpm run test:jest --watch=false", label: "jest" },
     { script: "pnpm run test:vitest --watch=false", label: "vitest" },
   ];
