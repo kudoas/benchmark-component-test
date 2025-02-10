@@ -8,32 +8,46 @@ import { JsonPipe } from '@angular/common';
   styleUrl: "./form.component.css",
   template: `
     <div class="form-container">
-      <h1>ユーザー登録フォーム</h1>
-
       <form #f="ngForm" (ngSubmit)="submitData(f)" class="form">
         @if (submitSuccess) {
           <div class="success-message">
-            送信成功！
+            Success!
           </div>
         }
 
-        <div>
-          <label for="name" class="form-field">名前</label>
-          <input
-            id="name"
-            name="name"
-            [(ngModel)]="formData.name"
-            required
-            #name="ngModel"
-            class="form-input"
-          >
-          @if (name.invalid && (name.dirty || name.touched)) {
-            <small class="error-message">名前は必須です</small>
-          }
+        <div class="name">
+          <div class="name-field">
+            <label for="firstName" class="form-field">FirstName</label>
+            <input
+              id="firstName"
+              name="firstName"
+              [(ngModel)]="formData.firstName"
+              required
+              #firstName="ngModel"
+              class="form-input"
+            >
+            @if (firstName.invalid && (firstName.dirty || firstName.touched)) {
+              <small class="error-message">FirstName is required</small>
+            }
+          </div>
+          <div class="name-field">
+            <label for="lastName" class="form-field">LastName</label>
+            <input
+              id="lastName"
+              name="lastName"
+              [(ngModel)]="formData.lastName"
+              required
+              #lastName="ngModel"
+              class="form-input"
+            >
+            @if (lastName.invalid && (lastName.dirty || lastName.touched)) {
+              <small class="error-message">LastName is required</small>
+            }
+          </div>
         </div>
 
         <div>
-          <label for="email" class="form-field">メールアドレス</label>
+          <label for="email" class="form-field">Email</label>
           <input
             type="email"
             id="email"
@@ -45,12 +59,12 @@ import { JsonPipe } from '@angular/common';
             class="form-input"
           >
           @if (email.invalid && (email.dirty || email.touched)) {
-            <small class="error-message">有効なメールアドレスを入力してください</small>
+            <small class="error-message">Please enter a valid email</small>
           }
         </div>
 
         <div>
-          <label for="age" class="form-field">年齢</label>
+          <label for="age" class="form-field">Age</label>
           <input
             type="number"
             id="age"
@@ -62,12 +76,12 @@ import { JsonPipe } from '@angular/common';
             class="form-input"
           >
           @if (age.invalid && (age.dirty || age.touched)) {
-            <small class="error-message">有効な年齢を入力してください</small>
+            <small class="error-message">Please enter a valid age</small>
           }
         </div>
 
         <div>
-          <label for="address" class="form-field">住所</label>
+          <label for="address" class="form-field">Address</label>
           <input
             id="address"
             name="address"
@@ -77,21 +91,23 @@ import { JsonPipe } from '@angular/common';
             class="form-input"
           >
           @if (address.invalid && (address.dirty || address.touched)) {
-            <small class="error-message">住所は必須です</small>
+            <small class="error-message">Address is required</small>
           }
         </div>
 
-        <button
-          type="submit"
-          [disabled]="!f.valid"
-          class="submit-button"
-        >
-          送信
-        </button>
+        <div class="submit-button-container">
+          <button
+            type="submit"
+            [disabled]="!f.valid"
+            class="submit-button"
+          >
+            Submit
+          </button>
+        </div>
 
         @if (showData) {
           <div class="data-preview">
-            <h3>送信データ:</h3>
+            <h3>Form Data</h3>
             <pre>{{ formData | json }}</pre>
           </div>
         }
@@ -102,7 +118,8 @@ import { JsonPipe } from '@angular/common';
 export class FormComponent {
   formSubmit = output<any>();
   formData = {
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     age: null as number | null,
     address: '',

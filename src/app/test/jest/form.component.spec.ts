@@ -13,14 +13,16 @@ describe('FormComponent', () => {
         on: { formSubmit }
       });
 
-      fireEvent.input(getByLabelText('名前'), { target: { value: `test${i}` } });
-      fireEvent.input(getByLabelText('メールアドレス'), { target: { value: `test${i}@test.com` } });
-      fireEvent.input(getByLabelText('年齢'), { target: { value: `${i}` } });
-      fireEvent.input(getByLabelText('住所'), { target: { value: `test address${i}` } });
+      fireEvent.input(getByLabelText('FirstName'), { target: { value: `first${i}` } });
+      fireEvent.input(getByLabelText('LastName'), { target: { value: `last${i}` } });
+      fireEvent.input(getByLabelText('Email'), { target: { value: `test${i}@test.com` } });
+      fireEvent.input(getByLabelText('Age'), { target: { value: `${i}` } });
+      fireEvent.input(getByLabelText('Address'), { target: { value: `test address${i}` } });
       fireEvent.click(getByRole('button'));
 
       expect(formSubmit).toHaveBeenCalledWith({
-        name: `test${i}`,
+        firstName: `first${i}`,
+        lastName: `last${i}`,
         email: `test${i}@test.com`,
         age: i,
         address: `test address${i}`
