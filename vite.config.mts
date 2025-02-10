@@ -42,6 +42,13 @@ export default defineConfig({
           },
         },
         extends: true
+      },
+      {
+        test: {
+          name: 'jsdom',
+          environment: 'jsdom',
+        },
+        extends: true
       }
     ]
   },
