@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
-        "test": {
+        "test-karma": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
@@ -97,6 +97,17 @@
             ],
             "browsers": "ChromeHeadless"
           }
+        },
+        "test-wtr": {
+          "builder": "@angular-devkit/build-angular:web-test-runner",
+          "options": {
+            "include": [
+              "src/app/test/karma/**/*.ts"
+            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "tsconfig.spec.json"
+          }
+
         }
       }
     }

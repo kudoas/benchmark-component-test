@@ -5,6 +5,7 @@ import { JsonPipe } from '@angular/common';
 @Component({
   selector: 'app-form',
   imports: [FormsModule, JsonPipe],
+  styleUrl: "./form.component.css",
   template: `
     <div class="form-container">
       <h1>ユーザー登録フォーム</h1>

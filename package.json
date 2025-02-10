@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "bench": "tsx ./scripts/benchmark.ts",
     "bench:parallel": "tsx ./scripts/benchmark.ts --parallel",
-    "test:karma": "ng test",
+    "test:karma": "ng run component-test:test-karma",
+    "test:wtr": "ng run component-test:test-wtr",
     "test:jest": "jest",
     "test:vitest": "vitest"
   },
@@ -28,6 +29,8 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^22.12.0",
     "@vitest/browser": "^3.0.4",
+    "@web/test-runner": "^0.19.0",
+    "@web/test-runner-core": "^0.13.4",
     "jest": "^29.7.0",
     "jest-preset-angular": "^14.5.1",
     "rxjs": "~7.8.0",
