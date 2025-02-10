@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/angular';
 import { FormComponent } from '../../component/form/form.component';
 import { vi, describe, it } from 'vitest';
 
-const TEST_COUNT = 500
+const TEST_COUNT = 1000
 const array = Array.from({ length: TEST_COUNT }, (_, i) => ({ index: i + 1 }));
 
 describe('FormComponent', () => {
