@@ -10,7 +10,7 @@
     "bench:parallel": "tsx ./scripts/benchmark.ts --parallel",
     "test:karma": "ng run component-test:test-karma",
     "test:wtr": "ng run component-test:test-wtr",
-    "test:jest": "jest",
+    "test:jest": "jest --silent",
     "test:jest2": "ng run component-test:test-jest",
     "test:playwright": "vitest run --project playwright",
     "test:webdriverio": "vitest run --project webdriverio"
