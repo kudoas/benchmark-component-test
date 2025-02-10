@@ -11,6 +11,7 @@
     "test:karma": "ng run component-test:test-karma",
     "test:wtr": "ng run component-test:test-wtr",
     "test:jest": "jest",
+    "test:jest2": "ng run component-test:test-jest",
     "test:vitest": "vitest"
   },
   "private": true,

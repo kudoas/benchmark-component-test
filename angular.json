@@ -107,7 +107,19 @@
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json"
           }
-
+        },
+        "test-jest": {
+          "builder": "@angular-devkit/build-angular:jest",
+          "options": {
+            "include": [
+              "src/app/test/jest/**/*.ts"
+            ],
+            "exclude": [
+              "src/app/test/jest/setup-jest.ts"
+            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "tsconfig.spec.json"
+          }
         }
       }
     }
