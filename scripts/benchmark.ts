@@ -32,7 +32,8 @@ const main = async () => {
     { script: "pnpm run test:wtr --watch=false", label: "wtr+jasmine" },
     { script: "pnpm run test:jest --watch=false", label: "jest (plugin)" },
     { script: "pnpm run test:jest2", label: "jest (official)" },
-    { script: "pnpm run test:vitest --watch=false", label: "vitest" },
+    { script: "pnpm run test:playwright", label: "vitest+playwright" },
+    { script: "pnpm run test:webdriverio", label: "vitest+webdriverio" },
   ];
 
   const isParallel = process.argv.includes("--parallel");

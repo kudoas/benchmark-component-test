@@ -49,7 +49,7 @@ importers:
         version: 22.12.0
       '@vitest/browser':
         specifier: ^3.0.4
-        version: 3.0.4(@types/node@22.12.0)(typescript@5.7.3)(vite@6.0.11(@types/node@22.12.0)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(terser@5.37.0)(tsx@4.19.2))(vitest@3.0.4)(webdriverio@9.7.2)
+        version: 3.0.4(@types/node@22.12.0)(playwright@1.50.1)(typescript@5.7.3)(vite@6.0.11(@types/node@22.12.0)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(terser@5.37.0)(tsx@4.19.2))(vitest@3.0.4)(webdriverio@9.7.2)
       '@web/test-runner':
         specifier: ^0.19.0
         version: 0.19.0
@@ -62,6 +62,9 @@ importers:
       jest-preset-angular:
         specifier: ^14.5.1
         version: 14.5.1(@angular/compiler-cli@19.1.4(@angular/compiler@19.1.4(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0)))(typescript@5.7.3))(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0))(@angular/platform-browser-dynamic@19.1.4(@angular/common@19.1.4(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/compiler@19.1.4(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0)))(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0))(@angular/platform-browser@19.1.4(@angular/animations@19.1.4(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0)))(@angular/common@19.1.4(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.1.4(rxjs@7.8.1)(zone.js@0.15.0))))(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(jest@29.7.0(@types/node@22.12.0))(jsdom@20.0.3)(typescript@5.7.3)
+      playwright:
+        specifier: ^1.50.1
+        version: 1.50.1
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
@@ -3574,6 +3577,11 @@ packages:
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -5033,6 +5041,16 @@ packages:
   pkg-dir@7.0.0:
     resolution: {integrity: sha512-Ie9z/WINcxxLp27BKOCHGde4ITq9UklYKDzVo1nhk5sqGEXU3FpkwP5GM2voTGJkGd9B3Otl+Q4uwSOeSUtOBA==}
     engines: {node: '>=14.16'}
+
+  playwright-core@1.50.1:
+    resolution: {integrity: sha512-ra9fsNWayuYumt+NiM069M6OkcRb1FZSK8bgi66AtpFoWkg2+y0bJSNmkFrWhMbEBbVKC/EruAHH3g0zmtwGmQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  playwright@1.50.1:
+    resolution: {integrity: sha512-G8rwsOQJ63XG6BbKj2w5rHeavFjy5zynBA9zsJMMtBoe/Uf757oG12NXz6e6OirF7RCrTVAKFXbLmn1RbL7Qaw==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   portfinder@1.0.32:
     resolution: {integrity: sha512-on2ZJVVDXRADWE6jnQaX0ioEylzgBpQk8r55NE4wjXW1ZxO+BgDlY6DXwj20i0V8eB4SenDQ00WEaxfiIQPcxg==}
@@ -8674,7 +8692,7 @@ snapshots:
     dependencies:
       vite: 6.0.11(@types/node@22.12.0)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(terser@5.37.0)(tsx@4.19.2)
 
-  '@vitest/browser@3.0.4(@types/node@22.12.0)(typescript@5.7.3)(vite@6.0.11(@types/node@22.12.0)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(terser@5.37.0)(tsx@4.19.2))(vitest@3.0.4)(webdriverio@9.7.2)':
+  '@vitest/browser@3.0.4(@types/node@22.12.0)(playwright@1.50.1)(typescript@5.7.3)(vite@6.0.11(@types/node@22.12.0)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(terser@5.37.0)(tsx@4.19.2))(vitest@3.0.4)(webdriverio@9.7.2)':
     dependencies:
       '@testing-library/dom': 10.4.0
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
@@ -8687,6 +8705,7 @@ snapshots:
       vitest: 3.0.4(@types/node@22.12.0)(@vitest/browser@3.0.4)(jiti@1.21.7)(jsdom@20.0.3)(less@4.2.1)(msw@2.7.0(@types/node@22.12.0)(typescript@5.7.3))(sass@1.83.1)(terser@5.37.0)(tsx@4.19.2)
       ws: 8.18.0
     optionalDependencies:
+      playwright: 1.50.1
       webdriverio: 9.7.2
     transitivePeerDependencies:
       - '@types/node'
@@ -10381,6 +10400,9 @@ snapshots:
       minipass: 7.1.2
 
   fs.realpath@1.0.0: {}
+
+  fsevents@2.3.2:
+    optional: true
 
   fsevents@2.3.3:
     optional: true
@@ -12159,6 +12181,14 @@ snapshots:
     dependencies:
       find-up: 6.3.0
 
+  playwright-core@1.50.1: {}
+
+  playwright@1.50.1:
+    dependencies:
+      playwright-core: 1.50.1
+    optionalDependencies:
+      fsevents: 2.3.2
+
   portfinder@1.0.32:
     dependencies:
       async: 2.6.4
@@ -13255,7 +13285,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.12.0
-      '@vitest/browser': 3.0.4(@types/node@22.12.0)(typescript@5.7.3)(vite@6.0.11(@types/node@22.12.0)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(terser@5.37.0)(tsx@4.19.2))(vitest@3.0.4)(webdriverio@9.7.2)
+      '@vitest/browser': 3.0.4(@types/node@22.12.0)(playwright@1.50.1)(typescript@5.7.3)(vite@6.0.11(@types/node@22.12.0)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(terser@5.37.0)(tsx@4.19.2))(vitest@3.0.4)(webdriverio@9.7.2)
       jsdom: 20.0.3
     transitivePeerDependencies:
       - jiti

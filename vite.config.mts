@@ -10,15 +10,39 @@ export default defineConfig({
     setupFiles: ['src/app/test/vitest/setup-vitest.ts'],
     globalSetup: 'src/app/test/vitest/global-setup.ts',
     include: ['src/app/test/vitest/*.spec.ts'],
-    browser: {
-      instances: [
-        {
-          browser: 'chrome',
+    workspace: [
+      {
+        test: {
+          name: 'playwright',
+          browser: {
+            instances: [
+              {
+                browser: 'chromium',
+              },
+            ],
+            provider: 'playwright',
+            enabled: true,
+            headless: true,
+          },
         },
-      ],
-      provider: 'webdriverio',
-      enabled: true,
-      headless: true,
-    },
+        extends: true,
+      },
+      {
+        test: {
+          name: 'webdriverio',
+          browser: {
+            instances: [
+              {
+                browser: 'chrome',
+              },
+            ],
+            provider: 'webdriverio',
+            enabled: true,
+            headless: true,
+          },
+        },
+        extends: true
+      }
+    ]
   },
 });
