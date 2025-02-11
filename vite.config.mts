@@ -10,6 +10,18 @@ export default defineConfig({
     setupFiles: ['src/app/test/vitest/setup-vitest.ts'],
     globalSetup: 'src/app/test/vitest/global-setup.ts',
     include: ['src/app/test/vitest/*.spec.ts'],
+    pool: 'forks',
+    poolOptions: {
+      forks: {
+        execArgv: [
+          '--cpu-prof',
+          '--cpu-prof-dir=test-runner-profile',
+          '--heap-prof',
+          '--heap-prof-dir=test-runner-profile'
+        ],
+        singleFork: true,
+      },
+    },
     workspace: [
       {
         test: {
