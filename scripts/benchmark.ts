@@ -30,8 +30,8 @@ const main = async () => {
   const scripts = [
     { script: "pnpm run test:karma --watch=false", label: "karma+jasmine" },
     { script: "pnpm run test:wtr --watch=false", label: "wtr+jasmine" },
-    { script: "pnpm run test:jest --watch=false", label: "jest(plugin)" },
-    { script: "pnpm run test:jest2", label: "jest(official)" },
+    { script: "pnpm run test:jest --watch=false", label: "jest" },
+    // { script: "pnpm run test:jest2", label: "jest(official)" },
     { script: "pnpm run test:playwright", label: "vitest+playwright" },
     { script: "pnpm run test:webdriverio", label: "vitest+webdriverio" },
     { script: "pnpm run test:jsdom", label: "vitest+jsdom" },

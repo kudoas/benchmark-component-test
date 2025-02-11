@@ -14,7 +14,8 @@
     "test:jest2": "ng run component-test:test-jest",
     "test:playwright": "vitest run --project playwright",
     "test:webdriverio": "vitest run --project webdriverio",
-    "test:jsdom": "vitest run --project jsdom"
+    "test:jsdom": "vitest run --project jsdom",
+    "vitest": "vitest"
   },
   "private": true,
   "dependencies": {

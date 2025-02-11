@@ -95,7 +95,8 @@
             "include": [
               "src/app/test/karma/**/*.ts"
             ],
-            "browsers": "ChromeHeadless"
+            "browsers": "ChromeHeadless",
+            "karmaConfig": "karma.conf.js"
           }
         },
         "test-wtr": {
