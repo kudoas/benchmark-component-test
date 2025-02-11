@@ -31,7 +31,7 @@ module.exports = function(config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['kjhtml'],
+    reporters: ['progress'],
     browsers: ['Chrome'],
     restartOnFileChange: true,
   });
