@@ -32,7 +32,7 @@ module.exports = function(config) {
       ]
     },
     reporters: ['progress'],
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
     restartOnFileChange: true,
   });
 };
