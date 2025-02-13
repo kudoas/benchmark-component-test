@@ -41,10 +41,7 @@ const main = async () => {
 
   const executeScripts = async (script: string, label: string) => {
     const first = await runScript(script, label);
-    const second = await runScript(script, label);
-    const third = await runScript(script, label);
-    const averageDuration = (parseFloat(first.duration) + parseFloat(second.duration) + parseFloat(third.duration)) / 3;
-    return { name: label, first: first.duration, second: second.duration, third: third.duration, average: `${averageDuration.toFixed(2)}s` };
+    return { name: label, duration: first.duration };
   };
 
   if (isParallel) {
@@ -53,7 +50,7 @@ const main = async () => {
     );
     console.table(results);
   } else {
-    const results: { name: string; first: string; second: string; third: string; average: string }[] = [];
+    const results: { name: string; duration: string }[] = [];
     for (const { script, label } of scripts) {
       const result = await executeScripts(script, label);
       results.push(result);
